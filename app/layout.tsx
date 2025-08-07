@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'tu-codigo-de-verificacion-aqui',
+    google: 'verification-code-here',
   },
   category: 'sports',
   classification: 'Martial Arts Academy',

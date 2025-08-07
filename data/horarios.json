@@ -22,7 +22,22 @@
     { "dia": "Viernes", "hora": "14:00 - 15:00" },
     { "dia": "Viernes", "hora": "18:00 - 19:00" },
     { "dia": "Viernes", "hora": "20:00 - 21:00" }
-  ],  "Boxeo Recreativo": [
+  ],
+  "Funcional": [
+    { "dia": "Lunes", "hora": "09:00 - 10:00" },
+    { "dia": "Lunes", "hora": "18:00 - 19:00" },
+    { "dia": "Martes", "hora": "09:00 - 10:00" },
+    { "dia": "Martes", "hora": "15:00 - 16:00" },
+    { "dia": "Martes", "hora": "18:00 - 19:00" },
+    { "dia": "Miércoles", "hora": "09:00 - 10:00" },
+    { "dia": "Miércoles", "hora": "18:00 - 19:00" },
+    { "dia": "Jueves", "hora": "09:00 - 10:00" },
+    { "dia": "Jueves", "hora": "15:00 - 16:00" },
+    { "dia": "Jueves", "hora": "18:00 - 19:00" },
+    { "dia": "Viernes", "hora": "09:00 - 10:00" },
+    { "dia": "Viernes", "hora": "18:00 - 19:00" }
+  ],
+  "Boxeo Recreativo": [
     { "dia": "Lunes", "hora": "10:00 - 11:00" },
     { "dia": "Lunes", "hora": "19:00 - 20:00" },
     { "dia": "Martes", "hora": "16:00 - 17:00" },
@@ -34,20 +49,4 @@
     { "dia": "Viernes", "hora": "10:00 - 11:00" },
     { "dia": "Viernes", "hora": "19:00 - 20:00" }
   ]
-,
-"Funcional": [
-  { "dia": "Lunes", "hora": "09:00 - 10:00" },
-  { "dia": "Lunes", "hora": "18:00 - 19:00" },
-  { "dia": "Martes", "hora": "09:00 - 10:00" },
-  { "dia": "Martes", "hora": "15:00 - 16:00" },
-  { "dia": "Martes", "hora": "18:00 - 19:00" },
-  { "dia": "Miércoles", "hora": "09:00 - 10:00" },
-  { "dia": "Miércoles", "hora": "18:00 - 19:00" },
-  { "dia": "Jueves", "hora": "09:00 - 10:00" },
-  { "dia": "Jueves", "hora": "15:00 - 16:00" },
-  { "dia": "Jueves", "hora": "18:00 - 19:00" },
-  { "dia": "Viernes", "hora": "09:00 - 10:00" },
-  { "dia": "Viernes", "hora": "18:00 - 19:00" }
-]
-
 }

@@ -91,6 +91,7 @@ export default function AcademiaChamp() {
                   width={80}
                   height={64}
                   className="w-full h-full object-contain"
+                  priority
                 />
               </div>
             </div>

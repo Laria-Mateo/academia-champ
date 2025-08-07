@@ -8,6 +8,8 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    loader: 'default',
+    disableStaticImages: false,
   },
 }
 

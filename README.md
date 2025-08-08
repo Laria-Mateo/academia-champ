@@ -4,10 +4,10 @@ Sitio web oficial de Academia Champ, academia de artes marciales ubicada en Para
 
 ## 🥋 Disciplinas
 
-- **Boxeo Recreativo**
-- **Jiu Jitsu / Grappling**
-- **Muay Thai / Kick Boxing**
-- **Funcional**
+- Boxeo Recreativo
+- Jiu Jitsu / Grappling
+- Muay Thai / Kick Boxing
+- Funcional
 
 ## 📍 Ubicación
 
@@ -33,3 +33,5 @@ El proyecto está configurado para deploy automático en Vercel con GitHub.
 ---
 
 **Academia Champ** - Formando campeones dentro y fuera del tatami 🥋
+
+*Última actualización: Deploy automático configurado*

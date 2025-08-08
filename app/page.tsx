@@ -11,6 +11,12 @@ import Image from 'next/image'
 
 const profesores = [
   {
+    nombre: "Ema",
+    disciplina: "Kick Boxing / Muay Thai / Boxeo",
+    descripcion: "Instructora certificada en artes marciales. Especialista en Kick Boxing, Muay Thai y Boxeo. Te va a ayudar a desarrollar técnica, potencia y resistencia.",
+    imagen: "/images/profeEma.webp"
+  },
+  {
     nombre: "Carlos Martínez",
     disciplina: "Taekwondo",
     descripcion: "Cinturón negro 4° Dan. Hace más de 15 años que enseña y forma campeones. Especialista en técnicas tradicionales.",
@@ -27,12 +33,6 @@ const profesores = [
     disciplina: "Jiu Jitsu",
     descripcion: "Cinturón morado de Jiu Jitsu. Especialista en técnicas de suelo y te va a enseñar a defenderte de verdad.",
     imagen: "/images/jiu-jitsu-instructor.png"
-  },
-  {
-    nombre: "Ema",
-    disciplina: "Funcional",
-    descripcion: "Instructora certificada en entrenamiento funcional. Te va a ayudar a mejorar tu condición física de manera integral.",
-    imagen: "/images/profeEma.webp"
   }
 ]
 
@@ -499,8 +499,11 @@ export default function AcademiaChamp() {
           </div>
 
           <div className="border-t-2 border-zinc-700 pt-8 text-center">
-            <p className="text-zinc-500 font-bold uppercase tracking-wide">
+            <p className="text-zinc-500 font-bold uppercase tracking-wide mb-2">
               © {new Date().getFullYear()} Academia Champ. Todos los derechos reservados.
+            </p>
+            <p className="text-zinc-600 text-sm font-medium">
+              Desarrollado por <span className="text-[#1dec1c] font-bold">Mateo Laria</span> - Técnico Universitario en Programación
             </p>
           </div>
         </div>

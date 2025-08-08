@@ -252,19 +252,20 @@ export default function AcademiaChamp() {
                   image: "/images/gym-equipment-weights.png"
                 }
               ].map((item, index) => (
-                <Card key={index} className="bg-zinc-800 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group rounded-none shadow-lg">
-                  <CardContent className="p-6">
-                    <div className="relative mb-4 overflow-hidden">
+                <Card key={index} className="bg-zinc-800 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group rounded-none shadow-lg w-full h-full flex flex-col">
+                  <CardContent className="p-6 flex-1 flex flex-col">
+                    <div className="relative mb-4 overflow-hidden h-48">
                       <Image
                         src={item.image || "/placeholder.svg"}
                         alt={item.title}
-                        width={300}
-                        height={200}
-                        className="transition-transform duration-300 group-hover:scale-105 rounded-none"
+                        fill
+                        className="transition-transform duration-300 group-hover:scale-105 rounded-none object-cover"
                       />
                     </div>
-                    <h4 className="text-xl font-black text-[#1dec1c] mb-3 uppercase tracking-wide">{item.title}</h4>
-                    <p className="text-zinc-400 leading-relaxed font-medium">{item.description}</p>
+                    <div className="flex-1 flex flex-col">
+                      <h4 className="text-xl font-black text-[#1dec1c] mb-3 uppercase tracking-wide">{item.title}</h4>
+                      <p className="text-zinc-400 leading-relaxed font-medium flex-1">{item.description}</p>
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -417,7 +418,7 @@ export default function AcademiaChamp() {
             <div className="relative">
               <div className="bg-zinc-900 rounded-none p-4 border-2 border-zinc-700 shadow-2xl">
                 <iframe
-                  src="https://www.google.com/maps/embed/v1/place?key=&q=-31.754902696232666,-60.50693455836299&zoom=17"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.7!2d-60.50693455836299!3d-31.754902696232666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5a9c4b1234567%3A0x1234567890abcdef!2sOlleros%20837%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos!5e0!3m2!1ses!2sar!4v1234567890123"
                   width="100%"
                   height="350"
                   style={{ border: 0 }}

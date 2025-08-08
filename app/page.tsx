@@ -14,25 +14,25 @@ const profesores = [
     nombre: "Carlos Martínez",
     disciplina: "Taekwondo",
     descripcion: "Cinturón negro 4° Dan. Hace más de 15 años que enseña y forma campeones. Especialista en técnicas tradicionales.",
-    imagen: "/taekwondo-instructor.png"
+    imagen: "/images/taekwondo-instructor.png"
   },
   {
     nombre: "Ana Rodriguez",
     disciplina: "Muay Thai / Kick Boxing",
     descripcion: "Campeona nacional de Muay Thai. Hace 10 años que entrena y enseña el arte de las ocho extremidades.",
-    imagen: "/female-muay-thai-instructor.png"
+    imagen: "/images/female-muay-thai-instructor.png"
   },
   {
     nombre: "Miguel Santos",
     disciplina: "Jiu Jitsu",
     descripcion: "Cinturón morado de Jiu Jitsu. Especialista en técnicas de suelo y te va a enseñar a defenderte de verdad.",
-    imagen: "/jiu-jitsu-instructor.png"
+    imagen: "/images/jiu-jitsu-instructor.png"
   },
   {
     nombre: "Ema",
     disciplina: "Funcional",
     descripcion: "Instructora certificada en entrenamiento funcional. Te va a ayudar a mejorar tu condición física de manera integral.",
-    imagen: "/profeEma.webp"
+    imagen: "/images/profeEma.webp"
   }
 ]
 
@@ -86,7 +86,7 @@ export default function AcademiaChamp() {
             <div className="flex items-center">
               <div className="w-20 h-16 bg-black rounded-lg flex items-center justify-center border-2 border-[#1dec1c] shadow-lg overflow-hidden">
                 <Image
-                  src="/logoAcademiaChamp.png"
+                  src="/images/logoAcademiaChamp.png"
                   alt="Academia Champ Logo"
                   width={80}
                   height={64}
@@ -150,7 +150,7 @@ export default function AcademiaChamp() {
       <section id="home" className="min-h-screen relative flex items-center justify-center pt-20">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/modern-martial-arts-gym.png"
+            src="/images/modern-martial-arts-gym.png"
             alt="Academia Champ"
             fill
             className="object-cover"
@@ -222,7 +222,7 @@ export default function AcademiaChamp() {
             </div>
             <div className="relative">
               <Image
-                src="/quienesSomos.webp"
+                src="/images/quienesSomos.webp"
                 alt="Interior de Academia Champ"
                 width={600}
                 height={400}
@@ -443,7 +443,7 @@ export default function AcademiaChamp() {
               <div className="flex items-center space-x-4 mb-6">
                 <div className="w-14 h-14 bg-black rounded-lg flex items-center justify-center border-2 border-[#1dec1c] shadow-lg overflow-hidden">
                   <Image
-                    src="/logoAcademiaChamp.png"
+                    src="/images/logoAcademiaChamp.png"
                     alt="Academia Champ Logo"
                     width={56}
                     height={56}

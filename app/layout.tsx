@@ -49,14 +49,14 @@ export const metadata: Metadata = {
     description: 'Academia de artes marciales en Paraná, Entre Ríos. Boxeo, Jiu Jitsu, Muay Thai, Kick Boxing y Funcional. Entrenamiento profesional con instructores certificados.',
     url: 'https://academiachamp.com',
     siteName: 'Academia Champ',
-    images: [
-      {
-        url: '/logoAcademiaChamp.png',
-        width: 800,
-        height: 600,
-        alt: 'Academia Champ - Logo',
-      },
-    ],
+                    images: [
+                  {
+                    url: '/images/logoAcademiaChamp.png',
+                    width: 800,
+                    height: 600,
+                    alt: 'Academia Champ - Logo',
+                  },
+                ],
     locale: 'es_AR',
     type: 'website',
   },
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Academia Champ - Deportes de Contacto | Paraná, Entre Ríos',
     description: 'Academia de artes marciales en Paraná, Entre Ríos. Boxeo, Jiu Jitsu, Muay Thai, Kick Boxing y Funcional.',
-    images: ['/logoAcademiaChamp.png'],
+                    images: ['/images/logoAcademiaChamp.png'],
   },
   robots: {
     index: true,
@@ -98,9 +98,9 @@ export default function RootLayout({
   return (
     <html lang="es" className={inter.variable}>
       <head>
-        <link rel="icon" href="/logoAcademiaChamp.png" type="image/png" />
-        <link rel="apple-touch-icon" href="/logoAcademiaChamp.png" />
-        <link rel="shortcut icon" href="/logoAcademiaChamp.png" type="image/png" />
+                            <link rel="icon" href="/images/logoAcademiaChamp.png" type="image/png" />
+                    <link rel="apple-touch-icon" href="/images/logoAcademiaChamp.png" />
+                    <link rel="shortcut icon" href="/images/logoAcademiaChamp.png" type="image/png" />
         <meta name="theme-color" content="#1dec1c" />
         <meta name="msapplication-TileColor" content="#1dec1c" />
         <meta name="msapplication-TileImage" content="/logoAcademiaChamp.png" />

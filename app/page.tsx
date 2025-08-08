@@ -418,7 +418,7 @@ export default function AcademiaChamp() {
             <div className="relative">
               <div className="bg-zinc-900 rounded-none p-4 border-2 border-zinc-700 shadow-2xl">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.7!2d-60.50693455836299!3d-31.754902696232666!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b5a9c4b1234567%3A0x1234567890abcdef!2sOlleros%20837%2C%20Paran%C3%A1%2C%20Entre%20R%C3%ADos!5e0!3m2!1ses!2sar!4v1234567890123"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3393.7!2d-60.5069882!3d-31.7550031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b44dc163871571%3A0x5706802b0c5bf0d4!2sInt.%20Olleros%20837%2C%20E3106%20Paran%C3%A1%2C%20Entre%20R%C3%ADos!5e0!3m2!1ses!2sar!4v1234567890123"
                   width="100%"
                   height="350"
                   style={{ border: 0 }}

@@ -164,7 +164,7 @@ export default function AcademiaChamp() {
             <div className="mb-6">
               <div className="bg-black rounded-lg p-4 border-2 border-[#1dec1c] shadow-lg inline-block">
                 <Image
-                  src="/logoAcademiaChamp.png"
+                  src="/images/logoAcademiaChamp.png"
                   alt="Academia Champ"
                   width={300}
                   height={150}
@@ -240,17 +240,17 @@ export default function AcademiaChamp() {
                 {
                   title: "Área de Entrenamiento",
                   description: "Tatamis profesionales y espacio amplio para todas las disciplinas",
-                  image: "/martial-arts-training.png"
+                  image: "/images/martial-arts-training.png"
                 },
                 {
                   title: "Ring de Boxeo",
                   description: "Ring profesional para entrenamientos y sparring especializado",
-                  image: "/boxing-ring-gym.png"
+                  image: "/images/boxing-ring-gym.png"
                 },
                 {
                   title: "Preparación Física",
                   description: "Equipamiento completo para fortalecimiento y acondicionamiento",
-                  image: "/gym-equipment-weights.png"
+                  image: "/images/gym-equipment-weights.png"
                 }
               ].map((item, index) => (
                 <Card key={index} className="bg-zinc-800 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group rounded-none shadow-lg">
@@ -275,17 +275,17 @@ export default function AcademiaChamp() {
                 {
                   title: "Área de Entrenamiento",
                   description: "Tatamis profesionales y espacio amplio para todas las disciplinas",
-                  image: "/martial-arts-training.png"
+                  image: "/images/martial-arts-training.png"
                 },
                 {
                   title: "Ring de Boxeo",
                   description: "Ring profesional para entrenamientos y sparring especializado",
-                  image: "/boxing-ring-gym.png"
+                  image: "/images/boxing-ring-gym.png"
                 },
                 {
                   title: "Preparación Física",
                   description: "Equipamiento completo para fortalecimiento y acondicionamiento",
-                  image: "/gym-equipment-weights.png"
+                  image: "/images/gym-equipment-weights.png"
                 }
               ].map((item, index) => (
                 <Card key={index} className="bg-zinc-800 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group rounded-none shadow-lg">

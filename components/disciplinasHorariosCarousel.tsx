@@ -18,22 +18,22 @@ export function DisciplinasHorariosCarousel({ className = '', isMobile = true }:
     {
       name: "Boxeo Recreativo",
       description: "El noble arte del boxeo. Desarrollá velocidad, precisión y fortaleza mental de forma recreativa",
-      image: "/boxeoGuante.webp"
+      image: "/images/boxeoGuante.webp"
     },
     {
       name: "Jiu Jitsu / Grappling",
       description: "Aprendé técnicas de suelo, sumisiones y estrategia de combate. Ideal para desarrollar fuerza mental y física",
-      image: "/jiu-jitsu-ground-fighting.png"
+      image: "/images/jiu-jitsu-ground-fighting.png"
     },
     {
       name: "Muay Thai / Kick Boxing",
       description: "El arte de las ocho extremidades. Mejorá tu resistencia, potencia y técnica con patadas y puños",
-      image: "/kickboxing.webp"
+      image: "/images/kickboxing.webp"
     },
     {
       name: "Funcional",
       description: "Entrenamiento completo que mejora tu condición física, fuerza y resistencia de manera integral",
-      image: "/gym-equipment-weights.png"
+      image: "/images/gym-equipment-weights.png"
     }
   ]
 

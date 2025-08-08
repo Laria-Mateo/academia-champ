@@ -9,12 +9,12 @@ export default function manifest(): MetadataRoute.Manifest {
     display: 'standalone',
     background_color: '#18181b',
     theme_color: '#1dec1c',
-                                         icons: [
-                   {
-                     src: '/logoAcademiaChamp.png',
-                     sizes: 'any',
-                     type: 'image/png',
-                   },
-                 ],
+                                                                                   icons: [
+                    {
+                      src: '/images/logoAcademiaChamp.png',
+                      sizes: 'any',
+                      type: 'image/png',
+                    },
+                  ],
   }
 }

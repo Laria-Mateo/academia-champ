@@ -91,7 +91,6 @@ export default function AcademiaChamp() {
                   width={80}
                   height={64}
                   className="w-full h-full object-contain"
-                  priority
                 />
               </div>
             </div>
@@ -167,7 +166,7 @@ export default function AcademiaChamp() {
                   src="/images/logoAcademiaChamp.png"
                   alt="Academia Champ"
                   width={300}
-                  height={150}
+                  height={300}
                   className="w-auto h-auto max-w-xs md:max-w-sm mx-auto object-contain"
                 />
               </div>

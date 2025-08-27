@@ -11,28 +11,34 @@ import Image from 'next/image'
 
 const profesores = [
   {
-    nombre: "Ema",
-    disciplina: "Kick Boxing / Muay Thai / Boxeo",
-    descripcion: "Instructora certificada en artes marciales. Especialista en Kick Boxing, Muay Thai y Boxeo. Te va a ayudar a desarrollar técnica, potencia y resistencia.",
-    imagen: "/images/profeEma.webp"
-  },
-  {
-    nombre: "Carlos Martínez",
+    nombre: "Gustavo Ferreira",
     disciplina: "Taekwondo",
     descripcion: "Cinturón negro 4° Dan. Hace más de 15 años que enseña y forma campeones. Especialista en técnicas tradicionales.",
-    imagen: "/images/taekwondo-instructor.png"
+    imagen: "/images/profesores/profeGustavo.webp"
   },
   {
-    nombre: "Ana Rodriguez",
+    nombre: "Emanuel Lopez",
+    disciplina: "Kick Boxing / Muay Thai / Boxeo",
+    descripcion: "Instructor certificada en artes marciales. Especialista en Kick Boxing, Muay Thai y Boxeo. Te va a ayudar a desarrollar técnica, potencia y resistencia.",
+    imagen: "/images/profesores/profeEma.webp"
+  },
+  {
+    nombre: "Valentin  Lescano",
     disciplina: "Muay Thai / Kick Boxing",
     descripcion: "Campeona nacional de Muay Thai. Hace 10 años que entrena y enseña el arte de las ocho extremidades.",
-    imagen: "/images/female-muay-thai-instructor.png"
+    imagen: "/images/profesores/profeValen.webp"
   },
   {
-    nombre: "Miguel Santos",
+    nombre: "Andrea Bressan",
     disciplina: "Jiu Jitsu",
     descripcion: "Cinturón morado de Jiu Jitsu. Especialista en técnicas de suelo y te va a enseñar a defenderte de verdad.",
-    imagen: "/images/jiu-jitsu-instructor.png"
+    imagen: "/images/profesores/profeChica.webp"
+  },
+  {
+    nombre: "Johann Ferreira",
+    disciplina: "Jiu Jitsu",
+    descripcion: "Cinturón morado de Jiu Jitsu. Especialista en técnicas de suelo y te va a enseñar a defenderte de verdad.",
+    imagen: "/images/profesores/profeChico.webp"
   }
 ]
 
@@ -40,6 +46,15 @@ export default function AcademiaChamp() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
+  const [modalImage, setModalImage] = useState<{src: string, alt: string} | null>(null)
+
+  const openImageModal = (src: string, alt: string) => {
+    setModalImage({ src, alt })
+  }
+
+  const closeImageModal = () => {
+    setModalImage(null)
+  }
 
   const scrollToSection = (sectionId: string) => {
     const sectionMap: { [key: string]: string } = {
@@ -67,6 +82,26 @@ export default function AcademiaChamp() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeImageModal()
+      }
+    }
+
+    if (modalImage) {
+      window.addEventListener('keydown', handleKeyPress)
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress)
+      document.body.style.overflow = 'unset'
+    }
+  }, [modalImage])
 
   return (
     <div className="min-h-screen bg-zinc-900 text-white relative overflow-x-hidden">
@@ -221,7 +256,7 @@ export default function AcademiaChamp() {
             </div>
             <div className="relative">
               <Image
-                src="/images/quienesSomos.webp"
+                src="/images/profesores/profesores.webp"
                 alt="Interior de Academia Champ"
                 width={600}
                 height={400}
@@ -239,27 +274,31 @@ export default function AcademiaChamp() {
                 {
                   title: "Área de Entrenamiento",
                   description: "Tatamis profesionales y espacio amplio para todas las disciplinas",
-                  image: "/images/martial-arts-training.png"
+                  image: "/images/instalations/tw.webp"
                 },
                 {
-                  title: "Ring de Boxeo",
+                  title: "Ring",
                   description: "Ring profesional para entrenamientos y sparring especializado",
-                  image: "/images/boxing-ring-gym.png"
+                  image: "/images/instalations/box.webp"
                 },
                 {
                   title: "Preparación Física",
                   description: "Equipamiento completo para fortalecimiento y acondicionamiento",
-                  image: "/images/gym-equipment-weights.png"
+                  image: "/images/instalations/fn.webp"
                 }
               ].map((item, index) => (
                 <Card key={index} className="bg-zinc-800 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group rounded-none shadow-lg w-full h-full flex flex-col">
                   <CardContent className="p-6 flex-1 flex flex-col">
-                    <div className="relative mb-4 overflow-hidden h-48">
+                    <div 
+                      className="relative mb-4 overflow-hidden rounded-lg cursor-pointer" 
+                      style={{ aspectRatio: '16/9' }}
+                      onClick={() => openImageModal(item.image || "/placeholder.svg", item.title)}
+                    >
                       <Image
                         src={item.image || "/placeholder.svg"}
                         alt={item.title}
                         fill
-                        className="transition-transform duration-300 group-hover:scale-105 rounded-none object-cover"
+                        className="transition-transform duration-300 group-hover:scale-105 rounded-lg object-cover"
                       />
                     </div>
                     <div className="flex-1 flex flex-col">
@@ -275,28 +314,31 @@ export default function AcademiaChamp() {
                 {
                   title: "Área de Entrenamiento",
                   description: "Tatamis profesionales y espacio amplio para todas las disciplinas",
-                  image: "/images/martial-arts-training.png"
+                  image: "/images/instalations/tw.webp"
                 },
                 {
-                  title: "Ring de Boxeo",
+                  title: "Ring",
                   description: "Ring profesional para entrenamientos y sparring especializado",
-                  image: "/images/boxing-ring-gym.png"
+                  image: "/images/instalations/box.webp"
                 },
                 {
                   title: "Preparación Física",
                   description: "Equipamiento completo para fortalecimiento y acondicionamiento",
-                  image: "/images/gym-equipment-weights.png"
+                  image: "/images/instalations/fn.webp"
                 }
               ].map((item, index) => (
                 <Card key={index} className="bg-zinc-800 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group rounded-none shadow-lg">
                   <CardContent className="p-6">
-                    <div className="relative mb-4 overflow-hidden">
+                    <div 
+                      className="relative mb-4 overflow-hidden rounded-lg cursor-pointer" 
+                      style={{ aspectRatio: '16/9' }}
+                      onClick={() => openImageModal(item.image || "/placeholder.svg", item.title)}
+                    >
                       <Image
                         src={item.image || "/placeholder.svg"}
                         alt={item.title}
-                        width={300}
-                        height={200}
-                        className="transition-transform duration-300 group-hover:scale-105 rounded-none"
+                        fill
+                        className="transition-transform duration-300 group-hover:scale-105 rounded-lg object-cover"
                       />
                     </div>
                     <h4 className="text-xl font-black text-[#1dec1c] mb-3 uppercase tracking-wide">{item.title}</h4>
@@ -340,24 +382,28 @@ export default function AcademiaChamp() {
               </Card>
             ))}
           </Carousel>
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {profesores.map((profesor, index) => (
-              <Card key={index} className="bg-zinc-900 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group hover:transform hover:scale-105 rounded-none shadow-lg">
-                <CardContent className="p-6 text-center">
-                  <div className="relative mb-6 w-32 h-32 mx-auto">
-                    <Image
-                      src={profesor.imagen || "/placeholder.svg"}
-                      alt={profesor.nombre}
-                      fill
-                      className="rounded-full border-4 border-zinc-600 group-hover:border-[#1dec1c] transition-colors duration-300 object-cover"
-                    />
-                  </div>
-                  <h3 className="text-xl font-black text-[#1dec1c] mb-2 uppercase tracking-wide">{profesor.nombre}</h3>
-                  <p className="text-lg font-bold text-zinc-300 mb-4 uppercase text-sm tracking-widest">{profesor.disciplina}</p>
-                  <p className="text-zinc-400 text-sm leading-relaxed font-medium">{profesor.descripcion}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="hidden md:block">
+            <div className="flex flex-wrap justify-center gap-8">
+              {profesores.map((profesor, index) => (
+                <div key={index} className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] max-w-[280px]">
+                  <Card className="bg-zinc-900 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group hover:transform hover:scale-105 rounded-none shadow-lg h-full">
+                    <CardContent className="p-6 text-center h-full flex flex-col">
+                      <div className="relative mb-6 w-32 h-32 mx-auto">
+                        <Image
+                          src={profesor.imagen || "/placeholder.svg"}
+                          alt={profesor.nombre}
+                          fill
+                          className="rounded-full border-4 border-zinc-600 group-hover:border-[#1dec1c] transition-colors duration-300 object-cover"
+                        />
+                      </div>
+                      <h3 className="text-xl font-black text-[#1dec1c] mb-2 uppercase tracking-wide">{profesor.nombre}</h3>
+                      <p className="text-lg font-bold text-zinc-300 mb-4 uppercase text-sm tracking-widest">{profesor.disciplina}</p>
+                      <p className="text-zinc-400 text-sm leading-relaxed font-medium flex-1">{profesor.descripcion}</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -508,6 +554,37 @@ export default function AcademiaChamp() {
           </div>
         </div>
       </footer>
+      
+      {/* Modal para ampliar imágenes */}
+      {modalImage && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-90 z-[60] flex items-center justify-center p-4"
+          onClick={closeImageModal}
+        >
+          <div className="relative max-w-5xl max-h-full w-full h-full flex items-center justify-center">
+            <button
+              onClick={closeImageModal}
+              className="absolute top-4 right-4 text-white hover:text-[#1dec1c] transition-colors duration-300 z-10 bg-black bg-opacity-50 rounded-full p-2"
+            >
+              <X size={24} />
+            </button>
+            <div className="relative w-full h-full max-w-4xl max-h-[80vh]">
+              <Image
+                src={modalImage.src}
+                alt={modalImage.alt}
+                fill
+                className="object-contain rounded-lg"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+              />
+            </div>
+            <div className="absolute bottom-4 left-4 right-4 text-center">
+              <h3 className="text-white text-xl font-bold bg-black bg-opacity-70 rounded-lg p-3">
+                {modalImage.alt}
+              </h3>
+            </div>
+          </div>
+        </div>
+      )}
       
       <WhatsAppButton 
         phoneNumber="5493436987971"

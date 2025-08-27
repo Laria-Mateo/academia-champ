@@ -23,17 +23,17 @@ export function DisciplinasHorariosCarousel({ className = '', isMobile = true }:
     {
       name: "Jiu Jitsu / Grappling",
       description: "Aprendé técnicas de suelo, sumisiones y estrategia de combate. Ideal para desarrollar fuerza mental y física",
-      image: "/images/jiu-jitsu-ground-fighting.png"
+      image: "/images/disciplines/tw.jpg"
     },
     {
       name: "Muay Thai / Kick Boxing",
       description: "El arte de las ocho extremidades. Mejorá tu resistencia, potencia y técnica con patadas y puños",
-      image: "/images/kickboxing.webp"
+      image: "/images/disciplines/kb.jpg"
     },
     {
       name: "Funcional",
       description: "Entrenamiento completo que mejora tu condición física, fuerza y resistencia de manera integral",
-      image: "/images/gym-equipment-weights.png"
+      image: "/images/disciplines/fn.jpg"
     }
   ]
 

@@ -14,31 +14,31 @@ const profesores = [
     nombre: "Gustavo Ferreira",
     disciplina: "Taekwondo",
     descripcion: "Cinturón negro 4° Dan. Hace más de 15 años que enseña y forma campeones. Especialista en técnicas tradicionales.",
-    imagen: "/images/profesores/profeGustavo.webp"
+    imagen: "/images/Profesores/profeGustavo.webp"
   },
   {
     nombre: "Emanuel Lopez",
     disciplina: "Kick Boxing / Muay Thai / Boxeo",
     descripcion: "Instructor certificada en artes marciales. Especialista en Kick Boxing, Muay Thai y Boxeo. Te va a ayudar a desarrollar técnica, potencia y resistencia.",
-    imagen: "/images/profesores/profeEma.webp"
+    imagen: "/images/Profesores/profeEma.webp"
   },
   {
     nombre: "Valentin  Lescano",
     disciplina: "Muay Thai / Kick Boxing",
     descripcion: "Campeona nacional de Muay Thai. Hace 10 años que entrena y enseña el arte de las ocho extremidades.",
-    imagen: "/images/profesores/profeValen.webp"
+    imagen: "/images/Profesores/profeValen.webp"
   },
   {
     nombre: "Andrea Bressan",
     disciplina: "Jiu Jitsu",
     descripcion: "Cinturón morado de Jiu Jitsu. Especialista en técnicas de suelo y te va a enseñar a defenderte de verdad.",
-    imagen: "/images/profesores/profeChica.webp"
+    imagen: "/images/Profesores/profeChica.webp"
   },
   {
     nombre: "Johann Ferreira",
     disciplina: "Jiu Jitsu",
     descripcion: "Cinturón morado de Jiu Jitsu. Especialista en técnicas de suelo y te va a enseñar a defenderte de verdad.",
-    imagen: "/images/profesores/profeChico.webp"
+    imagen: "/images/Profesores/profeChico.webp"
   }
 ]
 
@@ -256,7 +256,7 @@ export default function AcademiaChamp() {
             </div>
             <div className="relative">
               <Image
-                src="/images/profesores/profesores.webp"
+                src="/images/Profesores/profesores.webp"
                 alt="Interior de Academia Champ"
                 width={600}
                 height={400}

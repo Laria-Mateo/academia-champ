@@ -11,34 +11,46 @@ import Image from 'next/image'
 
 const profesores = [
   {
-    nombre: "Gustavo Ferreira",
-    disciplina: "Taekwondo",
-    descripcion: "Cinturón negro 4° Dan. Hace más de 15 años que enseña y forma campeones. Especialista en técnicas tradicionales.",
+    nombre: "Gustavo Ferreyra",
+    disciplina: "Fundador - Muay Thai / Kick Boxing / Boxeo",
+    descripcion: "Fundador de Academia Champ. Instructor de Muay Thai y kick boxing. Entrenador de boxeo y preparador físico. Peleador profesional y competidor amateur de boxeo.",
     imagen: "/images/Profesores/profeGustavo.webp"
   },
   {
-    nombre: "Emanuel Lopez",
-    disciplina: "Kick Boxing / Muay Thai / Boxeo",
-    descripcion: "Instructor certificada en artes marciales. Especialista en Kick Boxing, Muay Thai y Boxeo. Te va a ayudar a desarrollar técnica, potencia y resistencia.",
-    imagen: "/images/Profesores/profeEma.webp"
+    nombre: "Johann Ferreyra (el Chapo)",
+    disciplina: "Jiu Jitsu",
+    descripcion: "Faixa preta. Profesor de Jiujitsu.",
+    imagen: "/images/Profesores/profeChico.webp"
   },
   {
-    nombre: "Valentin  Lescano",
-    disciplina: "Muay Thai / Kick Boxing",
-    descripcion: "Campeona nacional de Muay Thai. Hace 10 años que entrena y enseña el arte de las ocho extremidades.",
+    nombre: "Valentín Lescano",
+    disciplina: "Kick Boxing / Boxeo Recreativo",
+    descripcion: "Instructor de kick boxing y boxeo recreativo. Ex peleador de kick boxing.",
     imagen: "/images/Profesores/profeValen.webp"
   },
   {
+    nombre: "Emanuel López",
+    disciplina: "Kick Boxing / Preparador Físico",
+    descripcion: "Instructor de Kick boxing y preparador físico. Entrenador de los infantiles. Peleador semi profesional.",
+    imagen: "/images/Profesores/profeEma.webp"
+  },
+  {
     nombre: "Andrea Bressan",
-    disciplina: "Jiu Jitsu",
-    descripcion: "Cinturón morado de Jiu Jitsu. Especialista en técnicas de suelo y te va a enseñar a defenderte de verdad.",
+    disciplina: "Muay Thai / Preparadora Física",
+    descripcion: "Instructora de Muay Thai y preparadora física. Peleadora profesional.",
     imagen: "/images/Profesores/profeChica.webp"
   },
   {
-    nombre: "Johann Ferreira",
-    disciplina: "Jiu Jitsu",
-    descripcion: "Cinturón morado de Jiu Jitsu. Especialista en técnicas de suelo y te va a enseñar a defenderte de verdad.",
-    imagen: "/images/Profesores/profeChico.webp"
+    nombre: "Ximena Bournissen",
+    disciplina: "Taekwondo Infantil",
+    descripcion: "Instructora de Taekwondo infantil. Prof. de educación física.",
+    emoji: "🥋"
+  },
+  {
+    nombre: "Emanuel Brown",
+    disciplina: "Taekwondo Infantil",
+    descripcion: "Instructor de taekwondo infantil. Prof. de educación Física.",
+    emoji: "🥋"
   }
 ]
 
@@ -62,7 +74,8 @@ export default function AcademiaChamp() {
       'quienes-somos': 'quienes-somos',
       'profesores': 'profesores',
       'disciplinas-y-horarios': 'disciplinas',
-      'ubicacion': 'ubicacion'
+      'ubicacion': 'ubicacion',
+      'noticias': 'noticias'
     }
     
     const targetId = sectionMap[sectionId] || sectionId
@@ -104,7 +117,7 @@ export default function AcademiaChamp() {
   }, [modalImage])
 
   return (
-    <div className="min-h-screen bg-zinc-900 text-white relative overflow-x-hidden">
+    <div className="min-h-screen bg-zinc-900 text-white relative overflow-x-hidden" style={{ backgroundColor: '#18181b' }}>
       <header 
         className={`fixed top-0 w-full z-50 border-b transition-all duration-300 ${
           isScrolled 
@@ -136,7 +149,8 @@ export default function AcademiaChamp() {
                 { name: 'Quiénes Somos', id: 'quienes-somos' },
                 { name: 'Profesores', id: 'profesores' },
                 { name: 'Disciplinas y Horarios', id: 'disciplinas-y-horarios' },
-                { name: 'Ubicación', id: 'ubicacion' }
+                { name: 'Ubicación', id: 'ubicacion' },
+                { name: 'Noticias', id: 'noticias' }
               ].map((item, index) => (
                 <button 
                   key={index}
@@ -165,7 +179,8 @@ export default function AcademiaChamp() {
                   { name: 'Quiénes Somos', id: 'quienes-somos' },
                   { name: 'Profesores', id: 'profesores' },
                   { name: 'Disciplinas y Horarios', id: 'disciplinas-y-horarios' },
-                  { name: 'Ubicación', id: 'ubicacion' }
+                  { name: 'Ubicación', id: 'ubicacion' },
+                  { name: 'Noticias', id: 'noticias' }
                 ].map((item, index) => (
                   <button 
                     key={index}
@@ -367,13 +382,17 @@ export default function AcademiaChamp() {
             {profesores.map((profesor, index) => (
               <Card key={index} className="bg-zinc-900 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group hover:transform hover:scale-105 rounded-none shadow-lg">
                 <CardContent className="p-6 text-center">
-                  <div className="relative mb-6 w-32 h-32 mx-auto">
-                    <Image
-                      src={profesor.imagen || "/placeholder.svg"}
-                      alt={profesor.nombre}
-                      fill
-                      className="rounded-full border-4 border-zinc-600 group-hover:border-[#1dec1c] transition-colors duration-300 object-cover"
-                    />
+                  <div className="relative mb-6 w-32 h-32 mx-auto flex items-center justify-center rounded-full border-4 border-zinc-600 group-hover:border-[#1dec1c] transition-colors duration-300 bg-zinc-800">
+                    {profesor.emoji ? (
+                      <span className="text-6xl">{profesor.emoji}</span>
+                    ) : (
+                      <Image
+                        src={profesor.imagen || "/placeholder.svg"}
+                        alt={profesor.nombre}
+                        fill
+                        className="rounded-full object-cover"
+                      />
+                    )}
                   </div>
                   <h3 className="text-xl font-black text-[#1dec1c] mb-2 uppercase tracking-wide">{profesor.nombre}</h3>
                   <p className="text-lg font-bold text-zinc-300 mb-4 uppercase text-sm tracking-widest">{profesor.disciplina}</p>
@@ -388,13 +407,17 @@ export default function AcademiaChamp() {
                 <div key={index} className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] max-w-[280px]">
                   <Card className="bg-zinc-900 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group hover:transform hover:scale-105 rounded-none shadow-lg h-full">
                     <CardContent className="p-6 text-center h-full flex flex-col">
-                      <div className="relative mb-6 w-32 h-32 mx-auto">
-                        <Image
-                          src={profesor.imagen || "/placeholder.svg"}
-                          alt={profesor.nombre}
-                          fill
-                          className="rounded-full border-4 border-zinc-600 group-hover:border-[#1dec1c] transition-colors duration-300 object-cover"
-                        />
+                      <div className="relative mb-6 w-32 h-32 mx-auto flex items-center justify-center rounded-full border-4 border-zinc-600 group-hover:border-[#1dec1c] transition-colors duration-300 bg-zinc-800">
+                        {profesor.emoji ? (
+                          <span className="text-6xl">{profesor.emoji}</span>
+                        ) : (
+                          <Image
+                            src={profesor.imagen || "/placeholder.svg"}
+                            alt={profesor.nombre}
+                            fill
+                            className="rounded-full object-cover"
+                          />
+                        )}
                       </div>
                       <h3 className="text-xl font-black text-[#1dec1c] mb-2 uppercase tracking-wide">{profesor.nombre}</h3>
                       <p className="text-lg font-bold text-zinc-300 mb-4 uppercase text-sm tracking-widest">{profesor.disciplina}</p>
@@ -479,6 +502,79 @@ export default function AcademiaChamp() {
         </div>
       </section>
 
+      <section id="noticias" className="py-20 pt-32 bg-zinc-900 overflow-x-hidden" style={{
+        backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0)`,
+        backgroundSize: '16px 16px'
+      }}>
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-black mb-4 uppercase tracking-wide">
+              <span className="text-[#1dec1c]">Noticias</span> y Eventos
+            </h2>
+            <div className="w-24 h-1 bg-[#1dec1c] mx-auto mb-6"></div>
+            <p className="text-xl text-zinc-400 max-w-2xl mx-auto font-medium">
+              Acompañamos y auspiciamos eventos deportivos. Conocé nuestras participaciones y logros
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="bg-zinc-800 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group rounded-none shadow-lg">
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <div className="w-full h-48 bg-zinc-700 rounded-lg flex items-center justify-center mb-4">
+                    <span className="text-6xl">🥊</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-black text-[#1dec1c] mb-3 uppercase tracking-wide">Auspicio de Eventos</h3>
+                <p className="text-zinc-400 leading-relaxed font-medium">
+                  Academia Champ apoya activamente eventos de artes marciales en la región, promoviendo el deporte y la competencia.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zinc-800 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group rounded-none shadow-lg">
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <div className="w-full h-48 bg-zinc-700 rounded-lg flex items-center justify-center mb-4">
+                    <span className="text-6xl">🏆</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-black text-[#1dec1c] mb-3 uppercase tracking-wide">Participaciones</h3>
+                <p className="text-zinc-400 leading-relaxed font-medium">
+                  Nuestros atletas compiten en torneos locales, regionales y nacionales, representando con orgullo a Academia Champ.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-zinc-800 border-2 border-zinc-700 hover:border-[#1dec1c] transition-all duration-300 group rounded-none shadow-lg">
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <div className="w-full h-48 bg-zinc-700 rounded-lg flex items-center justify-center mb-4">
+                    <span className="text-6xl">🤝</span>
+                  </div>
+                </div>
+                <h3 className="text-xl font-black text-[#1dec1c] mb-3 uppercase tracking-wide">Comunidad</h3>
+                <p className="text-zinc-400 leading-relaxed font-medium">
+                  Formamos parte de la comunidad deportiva de Paraná, colaborando con otras academias y organizaciones.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-12 text-center">
+            <p className="text-zinc-400 font-medium mb-4">
+              ¿Querés que auspiciemos tu evento o tenés información sobre próximas competencias?
+            </p>
+            <Button 
+              onClick={() => scrollToSection('ubicacion')} 
+              className="bg-[#1dec1c] hover:bg-[#17c018] text-black font-bold px-8 py-3 text-lg rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 uppercase tracking-wide"
+            >
+              Contactanos
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <footer className="py-16 border-t-4 border-[#1dec1c] bg-zinc-900 overflow-x-hidden" style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0)`,
         backgroundSize: '16px 16px'
@@ -548,9 +644,23 @@ export default function AcademiaChamp() {
             <p className="text-zinc-500 font-bold uppercase tracking-wide mb-2">
               © {new Date().getFullYear()} Academia Champ. Todos los derechos reservados.
             </p>
-            <p className="text-zinc-600 text-sm font-medium">
-              Desarrollado por <span className="text-[#1dec1c] font-bold">Mateo Laria</span> - Técnico Universitario en Programación
-            </p>
+            <div className="flex items-center justify-center gap-2 mb-2">
+              <p className="text-zinc-600 text-sm font-medium">Desarrollado por</p>
+              <a 
+                href="https://foxsolutions.com.ar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block hover:opacity-80 transition-opacity duration-300"
+              >
+                <Image
+                  src="/images/logoFox.png"
+                  alt="FOX Software Solutions"
+                  width={120}
+                  height={40}
+                  className="h-auto"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </footer>

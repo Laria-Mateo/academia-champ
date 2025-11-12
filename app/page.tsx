@@ -223,7 +223,7 @@ export default function AcademiaChamp() {
             </div>
             
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4 uppercase tracking-wide">
-              FORJA TU FUERZA INTERIOR
+              Escuela de deportes de contacto
             </h1>
             
             <p className="text-lg md:text-xl text-white/90 mb-8 font-medium">
